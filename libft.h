@@ -20,15 +20,6 @@
 # include <fcntl.h>
 # include <limits.h>
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 3
-# endif
-
-# if BUFFER_SIZE < 0
-#  undef BUFFER_SIZE
-#  define BUFFER_SIZE 0
-# endif
-
 int		ft_isalpha(int d);
 int		ft_isdigit(int d);
 int		ft_isalnum(int d);
@@ -63,24 +54,5 @@ char	**ft_split(char const *str, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_itoa(int x);
-
-char	*get_next_line(int fd);
-char	*read_and_join(int fd, char *buffer, char *line);
-size_t	find_length(const char *s);
-char	*find_newline(char *s);
-size_t	newline_in_buffer(char *buffer);
-char	*gnl_ft_strjoin(char *line, char *buffer);
-void	manage_buffer(char *dst, char *src);
-void	copy_str(char *dst, char *src);
-void	*gnl_ft_calloc(size_t count, size_t size);
-
-int		ft_printf(const char *format, ...);
-int		print_char(char c);
-int		print_str(char *s);
-int		print_nbr(int n);
-int		print_uns_dec(unsigned int n);
-int		print_lowerhex(unsigned long n);
-int		print_upperhex(unsigned int n);
-int		print_pointer(unsigned long ptr);
 
 #endif
